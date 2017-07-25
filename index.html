@@ -4,25 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ToDo App</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
-    
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="qq.png" />
+    <title>
+Quiz App</title>
 </head>
-<body>
-<div id="main">
-    <div id="myDIV" class="header">
-    <h2 style="margin:5px">My To Do List</h2>
-    <input type="text" id="myInput" placeholder="Title..." onkeypress="return searchKeyPress(event);">
-    <span onclick="newElement()" class="addBtn">Add</span>
+<body background="bg.jpg">
+    <div id="main_welcome">
+        <div class="login">
+            <h1>Login to start Quiz!</h1>
+            <input type="text" placeholder="Username" id="username" required>  
+            <input type="password" placeholder="password" id="password" required>  
+            <input type="submit" onclick="startNow()" value="Get Started">
+        </div>
+        <div class="shadow"></div>
+
+
     </div>
-
-    <ul id="myUL">
-
-    </ul>
-    
-</div>
-<div></div>
-<h4 class="admin">By: Aftab Ahmed </br> Roll Num: 3270 </br> Batch 4.1 (Orange)</h4>
-<script src="app.js"></script>
+    <div id="main_instruction">
+        <span class="profile_username">Aamir</span>
+        <div class="tnc">
+            <h1>Terms and Conditions</h1>
+            <p>* There are total 8 question, all need to be answered.</p>
+            <p>* Total time to complete this test is only 4 minutes (30 seconds for each question)</p>
+            <p>* All questions carry equal marks</p>
+            <p>* Each question has 10 marks</p>
+            <p>* No negative marking</p>
+            <p>* Page refresh is not allowed, otherwise you can loss all your correct answers</p>
+            <p>* Cheating is not allowed</p>
+            <p><b>If you have read all the terms and conditions click on Agree and Start Quiz button</b></p>            
+        </div>
+        <center><button class="next-btn" onclick="startQuiz()">Agree and Start Quiz</button></center>
+    </div>
+    <div id="main">
+        <span class="profile_username"></span>
+        <div class="countdown">Time Remaining: <span id="timer"></span></div>
+        <center>
+            <h2>Test Your Skills</h2>
+        </center>
+        <div id="content">
+               <div id='question'></div> 
+        </div>
+        <h3 class="center">Total Questions : 08 </h3>
+        <h3 class="center">Your Score : <span id="score" class="right">0</span></h3>
+        <h3 class="center">Wrong Answered : <span id="wrong" class="right">0</span></h3>
+    </div>
+    <script src="app.js"></script>
 </body>
 </html>
